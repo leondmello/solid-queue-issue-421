@@ -17,6 +17,7 @@ module SolidQueueIssue421
     config.autoload_lib(ignore: %w[assets tasks])
 
     config.active_job.queue_adapter = :solid_queue
+    config.solid_queue.connects_to = { database: { writing: :primary, reading: :primary } }
 
     # Configuration for the application, engines, and railties goes here.
     #
